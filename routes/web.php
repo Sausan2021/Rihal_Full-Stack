@@ -23,5 +23,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 //StudentData
-Route::get('studentData', [StudentController::class,'create']);
-Route::post('/studentData/store', [StudentController::class,'store']);
+Route::get('/studentData', [App\Http\Controllers\StudentController::class,'create']);
+Route::post('/studentData/store', [App\Http\Controllers\StudentController::class,'store']);
+
+
+//Statistics
+Route::get('/statistics', [App\Http\Controllers\StatisticsController::class,'index']);
