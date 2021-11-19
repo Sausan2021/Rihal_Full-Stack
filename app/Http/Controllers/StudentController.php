@@ -23,7 +23,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('studentData');
     }
 
     /**
@@ -34,7 +34,32 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => 'required',
+            'date_of_birth' => 'required',
+        ]);
+
+        $check = Student::where(['id'=>$request->name,'country_id'=>$request->name, 'class_id'=>$request->name ])->first();
+
+        if($check)
+        {
+            return redirect()->back()->with('failed','Student Details Already Exist');
+        }
+
+        // $studentData = Student::orderBy('id','desc')->first();
+        // $id = $studentData  ? ("rihal" . sprintf('%04u', ($studentData->id + 1))  ) : ("rihal" . sprintf('%04u', 1));
+        
+
+        $id = $request->id;
+        $name = $request->name;
+        $date_of_birth = $request->date_of_birth;
+
+        $studentData = new Student;
+        $studentData->id=$id;
+        $studentData->name =  $name;
+        $studentData->date_of_birth =  $date_of_birth;
+        $studentData->save();
+        return redirect()->back()->with('success','Student Details Successfully Add');
     }
 
     /**

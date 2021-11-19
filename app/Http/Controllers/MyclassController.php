@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Myclass;
-class ClassController extends Controller
+use\App\Models\Myclass;
+class MyclassController extends Controller
 {
     /**
      * Display a listing of the resource.

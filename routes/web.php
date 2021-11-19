@@ -22,3 +22,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
+//StudentData
+Route::get('studentData', [StudentController::class,'create']);
+Route::post('/studentData/store', [StudentController::class,'store']);
