@@ -62,6 +62,7 @@ class StudentController extends Controller
         $studentData->date_of_birth =  $date_of_birth;
         $studentData->save();
         return redirect()->back()->with('success','Student Details Successfully Add');
+        // $token = ParallelTesting::token();
     }
 
     /**
