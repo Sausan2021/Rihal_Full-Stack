@@ -29,3 +29,6 @@ Route::post('/studentData/store', [App\Http\Controllers\StudentController::class
 
 //Statistics
 Route::get('/statistics', [App\Http\Controllers\StatisticsController::class,'index']);
+
+//Test Table
+Route::view('/TestTable','TestTable');
